@@ -1,9 +1,9 @@
 
 // 課題3-2 のプログラムはこの関数の中に記述すること
 function print(data) {
-  const programs = data.list.g1;
+  let programs = data.list.g1;
 
-  for (const program of programs) {
+  for (let program of programs) {
     console.log("タイトル:", program.title);
     console.log("サブタイトル:", program.subtitle);
     console.log("開始時刻:", program.start_time);
@@ -16,8 +16,51 @@ function print(data) {
 }
 
 // 課題5-1 の関数 printDom() はここに記述すること
-function printDom(data) {
 
+function printDom(data) {
+  let div = document.createElement('div');
+  div.id = 'result';
+  document.body.insertAdjacentElement('beforeend',div);
+
+  let programs = data.list.g1;
+
+  for (let program of programs) {
+    let item = document.createElement('div');
+    item.style.marginBottom = '1em';
+
+    let title = document.createElement('p');
+    title.textContent = 'タイトル: ' + program.title;
+    item.insertAdjacentElement('beforeend',title);
+
+    let subtitle = document.createElement('p');
+    subtitle.textContent = 'サブタイトル: ' + program.subtitle;
+    item.insertAdjacentElement('beforeend',subtitle);
+
+    let start = document.createElement('p');
+    start.textContent = '開始時刻: ' + program.start_time;
+    item.insertAdjacentElement('beforeend',start);
+
+    let end = document.createElement('p');
+    end.textContent = '終了時刻: ' + program.end_time;
+    item.insertAdjacentElement('beforeend',end);
+
+    let service = document.createElement('p');
+    service.textContent = 'サービス名: ' + program.service.name;
+    item.insertAdjacentElement('beforeend',service);
+
+    let area = document.createElement('p');
+    area.textContent = 'エリア: ' + program.area.name;
+    item.insertAdjacentElement('beforeend',area);
+
+    let act = document.createElement('p');
+    act.textContent = '出演者: ' + (program.act || '情報なし');
+    item.insertAdjacentElement('beforeend',act);
+
+    let line = document.createElement('hr');
+    item.insertAdjacentElement('beforeend',line);
+
+    div.insertAdjacentElement('beforeend',item);
+  }
 }
 
 // 課題6-1 のイベントハンドラ登録処理は以下に記述
