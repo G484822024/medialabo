@@ -1,23 +1,73 @@
-a:link {
-    text-decoration: none;
+body {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  background-color: #f3f6fb;
+  color: #333;
+  margin: 40px;
+  line-height: 1.8;
+}
+
+/* Heading styles */
+h1 {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 1em;
+  color: #1a1a1a;
+}
+
+h2 {
+  font-size: 1.6em;
+  margin-top: 2em;
+  margin-bottom: 0.5em;
+  color: #2a2a2a;
+  border-bottom: 2px solid #d0d7e5;
+  padding-bottom: 0.3em;
 }
 
 h3 {
-    font-family:cursive;
-	color: #3f3faf;
-	background: linear-gradient(.25turn, white, #ffefaf);
+  font-size: 1.3em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  color: #3a3a3a;
+  padding-left: 1em; /* 缩进一级 */
 }
 
-div#zentai {
-	display: grid;
-  grid-template-columns: 1fr;
-  gap: 20px;
-  padding: 20px;
+p {
+  font-size: 1em;
+  margin-bottom: 1.5em;
+  color: #444;
+  padding-left: 2em; /* 缩进二级，与h2/h3区分 */
 }
 
-div#zentai > div {
-	background-color: #ffffff;
-    border-radius: 8px;
-    padding: 15px;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+/* Link styles */
+a {
+  color: #007acc;
+  text-decoration: underline;
+  transition: color 0.3s;
+}
+
+a:visited {
+  color: #5a3e91;
+}
+
+a:hover {
+  color: #005f9e;
+}
+
+/* Section block */
+section {
+  margin-bottom: 2.5em;
+  padding: 1.5em;
+  background-color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+}
+
+/* Lists */
+ul {
+  padding-left: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+li {
+  margin-bottom: 0.7em;
 }
